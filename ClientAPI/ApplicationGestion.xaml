@@ -1,0 +1,235 @@
+﻿<Window x:Class="ClientAPI.ApplicationGestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestion des applications"  Height="525" Width="525" >
+    <Grid>
+        <TabControl Background="AliceBlue">
+            
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Gestion des applications" Foreground="Black" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+                        <TextBlock Text="OUTIL DE TEST DES API" Foreground="White" FontSize="18" Padding="10" Background="#007acc" Margin="0 0 0 10"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label>Rechercher une application (identifiant technique) :</Label>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                <TextBox x:Name="AppliId" Margin="0 4 10 4"></TextBox>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                <Button Margin="10,4,10,0" Height="20" VerticalAlignment="Top" Click="ButtonRechercherAppli">rechercher</Button> 
+                    </Grid> 
+
+        </Grid>
+        <Grid Grid.Row ="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+           </Grid.ColumnDefinitions>
+            <Grid  Grid.Column="1">
+              
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Label>Nom d'application :</Label>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Label>Code de l'application :</Label>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Label>Description de l'application :</Label>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Label>Type de l'application :</Label>
+                </Grid>
+                <Grid Grid.Row="9">
+                    <Button x:Name="BtnSupprimerAppli" Click="BtnSupprimerAppli_Click">Supprimer</Button>
+                </Grid>
+            </Grid>
+            <Grid  Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="1">
+                    <TextBox x:Name="nomAppliModif"  ></TextBox>
+               </Grid> 
+
+                <Grid Grid.Row="3">
+                    <TextBox x:Name="codeAppliModif" ></TextBox>
+                </Grid>
+                <Grid Grid.Row="5" >
+                    <TextBox x:Name="descAppliModif"  ></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="7">
+                    <ComboBox x:Name="TypeAppliModif"   ></ComboBox>
+                </Grid>
+                
+                <Grid Grid.Row="9">
+                    <Button x:Name="ButtonModifierAppli" Click="ButtonModifierAppli_Click" >Modifier</Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Création des applications" Foreground="Black" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+
+
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="OUTIL DE TEST DES API" Foreground="White" FontSize="18" Padding="10" Background="#007acc" Margin="0 0 0 10"/>
+                    </Grid>
+
+                    
+                    <Grid Grid.Row ="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid  Grid.Column="1">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1">
+                                <Label>Nom d'application :</Label>
+                            </Grid>
+
+                            <Grid Grid.Row="3">
+                                <Label>Code de l'application :</Label>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Label>Description de l'application :</Label>
+                            </Grid>
+                            <Grid Grid.Row="7">
+                                <Label>Type de l'application :</Label>
+                            </Grid>
+                          
+                        </Grid>
+                        <Grid  Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Grid Grid.Row="1">
+                                <TextBox x:Name="nomAppliAjout"  ></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Row="3">
+                                <TextBox x:Name="codeAppliAjout" ></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="5" >
+                                <TextBox x:Name="descAppliAjout"  ></TextBox>
+                            </Grid>
+
+                            <Grid Grid.Row="7">
+                                <ComboBox x:Name="TypeAppliAjout"   ></ComboBox>
+                            </Grid>
+
+                            <Grid Grid.Row="9">
+                                <Button x:Name="ButtonAjoutAppli" Click="ButtonAjoutAppli_Click" >Ajouter</Button>
+                            </Grid>
+
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+
+
+
+        </TabControl>
+    </Grid>
+</Window>
