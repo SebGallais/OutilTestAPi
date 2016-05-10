@@ -42,6 +42,8 @@ namespace ClientAPI
             TypeAppliAjout.Items.Add("LIFERAY");
 
         }
+        string Server = "localhost";
+        string Port = "8081";
 
         private void ButtonRechercherAppli(object sender, RoutedEventArgs e)
         {
@@ -52,7 +54,7 @@ namespace ClientAPI
                 {
                 String identifiant = AppliId.Text;
                 webClient.Headers.Add(HttpRequestHeader.Authorization, jeton);
-                Stream stream = webClient.OpenRead("http://172.16.2.71:8080/apiAnnuaire/v1/applications/" + identifiant + "");
+                Stream stream = webClient.OpenRead("http://" + Server + ":" + Port + "/apiAnnuaire/v1/applications/" + identifiant + "");
                 StreamReader reader = new StreamReader(stream);
 
                 String str = reader.ReadToEnd();
@@ -94,7 +96,7 @@ namespace ClientAPI
 
                     String identifiant = AppliId.Text;
                     webClient.Headers.Add(HttpRequestHeader.ContentType, "application/json;UTF-8");
-                    webClient.UploadString("http://172.16.2.71:8080/apiAnnuaire/v1/applications/" + identifiant + "", "PUT", JsonConvert.SerializeObject(new ApplicationDTO() { codeApplication = codeAppliModif.Text, nomApplication = nomAppliModif.Text, descriptionApplication = descAppliModif.Text, codeTypeApplication = TypeAppliModif.Text }));
+                    webClient.UploadString("http://" + Server + ":" + Port + "/apiAnnuaire/v1/applications/" + identifiant + "", "PUT", JsonConvert.SerializeObject(new ApplicationDTO() { codeApplication = codeAppliModif.Text, nomApplication = nomAppliModif.Text, descriptionApplication = descAppliModif.Text, codeTypeApplication = TypeAppliModif.Text }));
 
                     MessageBox.Show("Application modifiée");
                     codeAppliModif.Text = "";
@@ -118,7 +120,7 @@ namespace ClientAPI
             using (WebClient webClient = new WebClient())
             {
                 String identifiant = AppliId.Text;
-                webClient.UploadString("http://172.16.2.71:8080/apiAnnuaire/v1/applications/" + identifiant + "", "DELETE");
+                webClient.UploadString("http://" + Server + ":" + Port + "/apiAnnuaire/v1/applications/" + identifiant + "", "DELETE");
 
                 MessageBox.Show("ok");
             }
@@ -138,7 +140,7 @@ namespace ClientAPI
 
                     webClient.Headers.Add(HttpRequestHeader.Authorization, jeton);
                     webClient.Headers.Add(HttpRequestHeader.ContentType, "application/json;UTF-8");
-                    webClient.UploadString("http://172.16.2.71:8080/apiAnnuaire/v1/applications", "POST", JsonConvert.SerializeObject(new ApplicationDTO() { codeApplication = codeAppliAjout.Text, nomApplication = nomAppliAjout.Text, descriptionApplication = descAppliAjout.Text, codeTypeApplication = TypeAppliAjout.Text }));
+                    webClient.UploadString("http://" + Server + ":" + Port + "/apiAnnuaire/v1/applications", "POST", JsonConvert.SerializeObject(new ApplicationDTO() { codeApplication = codeAppliAjout.Text, nomApplication = nomAppliAjout.Text, descriptionApplication = descAppliAjout.Text, codeTypeApplication = TypeAppliAjout.Text }));
 
                     MessageBox.Show("Application ajoutée");
 

@@ -25,9 +25,11 @@ namespace ClientAPI
         public MainWindow()
         {
             InitializeComponent();
+            
            
         }
-
+        string Server = "localhost";
+        string Port = "8081";
         private void BoutonConnexion_Click(object sender, RoutedEventArgs e)
         {
             using (WebClient webClient = new WebClient())
@@ -38,7 +40,7 @@ namespace ClientAPI
 
                 String Username = usernameBox.Text;
                 String Password = passwordBox.Password;
-                String str = webClient.UploadString("http://172.16.2.71:8080/apiAnnuaire/v1/login?Username=" + Username + "&Password=" + Password + "", "POST");
+                String str = webClient.UploadString("http://" + Server + ":" + Port  + "/apiAnnuaire/v1/login?Username=" + Username + "&Password=" + Password + "", "POST");
 
                 
                     ClientAPI.Model.Token auth = JsonConvert.DeserializeObject<ClientAPI.Model.Token>(str);
